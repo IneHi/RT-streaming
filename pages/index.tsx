@@ -47,7 +47,7 @@ function DemoMeetingTab({ label }: { label: string }) {
   return (
     <div className={styles.tabContent} style={{ border: 'none' }}>
       {/* <p style={{ margin: 0 }}>Try LiveKit Meet for free with our live demo project.</p> */}
-      <button style={{ marginTop: '1rem' }} className="lk-button bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out" onClick={startMeeting}>
+      <button style={{ marginTop: '1rem' }} className="lk-button" onClick={startMeeting}>
         Start Live Streaming!
       </button>
       {/* <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -282,7 +282,9 @@ const Home = ({ tabIndex }: InferGetServerSidePropsType<typeof getServerSideProp
                   </label>
                 </div>
                 <div className="flex items-center justify-between pt-4">
-                  <DemoMeetingTab label="Demo" />
+                  
+                    <DemoMeetingTab label="Demo" />
+
                   <button
                     className="bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
                     type="button"

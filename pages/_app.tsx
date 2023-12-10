@@ -10,8 +10,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       <DefaultSeo
         title="NTUSTLIVE"
         titleTemplate="%s"
-        defaultTitle="LiveKit Meet | Conference app build with LiveKit open source"
-        description="LiveKit is an open source WebRTC project that gives you everything needed to build scalable and real-time audio and/or video experiences in your applications."
+        defaultTitle="NTUSTLIVE"
+        description="NTUSTLIVE"
         twitter={{
           handle: '@livekitted',
           site: '@livekitted',
@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               type: 'image/png',
             },
           ],
-          site_name: 'LiveKit Meet',
+          site_name: 'NTUSTLIVE',
         }}
         additionalMetaTags={[
           {
