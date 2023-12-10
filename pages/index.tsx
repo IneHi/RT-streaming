@@ -42,19 +42,15 @@ function DemoMeetingTab({ label }: { label: string }) {
   const [e2ee, setE2ee] = useState(false);
   const [sharedPassphrase, setSharedPassphrase] = useState(randomString(64));
   const startMeeting = () => {
-    if (e2ee) {
-      router.push(`/rooms/${generateRoomId()}#${encodePassphrase(sharedPassphrase)}`);
-    } else {
-      router.push(`/rooms/${generateRoomId()}`);
-    }
+    router.push(`/rooms/${generateRoomId()}`);
   };
   return (
-    <div className={styles.tabContent}>
-      <p style={{ margin: 0 }}>Try LiveKit Meet for free with our live demo project.</p>
-      <button style={{ marginTop: '1rem' }} className="lk-button" onClick={startMeeting}>
-        Start Meeting
+    <div className={styles.tabContent} style={{ border: 'none' }}>
+      {/* <p style={{ margin: 0 }}>Try LiveKit Meet for free with our live demo project.</p> */}
+      <button style={{ marginTop: '1rem' }} className="lk-button bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out" onClick={startMeeting}>
+        Start Live Streaming!
       </button>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      {/* <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         <div style={{ display: 'flex', flexDirection: 'row', gap: '1rem' }}>
           <input
             id="use-e2ee"
@@ -75,7 +71,7 @@ function DemoMeetingTab({ label }: { label: string }) {
             />
           </div>
         )}
-      </div>
+      </div> */}
     </div>
   );
 }
@@ -205,12 +201,6 @@ const Home = ({ tabIndex }: InferGetServerSidePropsType<typeof getServerSideProp
         .
       </footer> */}
       <>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-        <title>NTUSTLIVE</title>
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
         <link
           rel="stylesheet"
           href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"
@@ -226,7 +216,7 @@ const Home = ({ tabIndex }: InferGetServerSidePropsType<typeof getServerSideProp
               '\n      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");\n\n      html {\n        font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";\n      }\n    '
           }}
         />
-        <div className="h-full" style={{backgroundImage: "url(/images/header.png"}}>
+        <div className="h-full" style={{ backgroundImage: "url(/images/header.png" }}>
           {/*Nav*/}
           <div className="w-full container mx-auto">
             <div className="w-full flex items-center justify-between">
@@ -272,11 +262,11 @@ const Home = ({ tabIndex }: InferGetServerSidePropsType<typeof getServerSideProp
             {/*Left Col*/}
             <div className="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
               <h1 className="my-4 text-3xl md:text-5xl text-white opacity-75 font-bold leading-tight text-center md:text-left">
-                Experience <br/>
+                Experience <br />
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-pink-500 to-purple-500">
                   ULTRA LOW LATENCY
                 </span>
-                <br/>live streaming!
+                <br />live streaming!
               </h1>
               <p className="leading-normal text-base md:text-2xl mb-8 text-center md:text-left">
                 Using WebRTC technology, we provide the lowest latency live streaming
@@ -288,10 +278,11 @@ const Home = ({ tabIndex }: InferGetServerSidePropsType<typeof getServerSideProp
                     className="block text-blue-300 py-2 font-bold mb-2"
                     htmlFor="emailaddress"
                   >
-                    Signin to experience the new page of live streaming!
+                    Sign in to experience the new page of live streaming!
                   </label>
                 </div>
                 <div className="flex items-center justify-between pt-4">
+                  <DemoMeetingTab label="Demo" />
                   <button
                     className="bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
                     type="button"
@@ -311,7 +302,7 @@ const Home = ({ tabIndex }: InferGetServerSidePropsType<typeof getServerSideProp
             {/*Footer*/}
             <div className="w-full pt-16 pb-6 text-sm text-center md:text-left fade-in">
               <a className="text-gray-500 no-underline hover:no-underline" href="#">
-                © NTUSTLIVE 2023 - 
+                © NTUSTLIVE 2023 -
               </a>
               {' '}ALL RIGHTS RESERVED
             </div>
