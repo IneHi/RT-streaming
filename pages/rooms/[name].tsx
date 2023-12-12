@@ -98,6 +98,7 @@ const ActiveRoom = ({ roomName, userChoices, onLeave }: ActiveRoomProps) => {
 
   const e2eePassphrase =
     typeof window !== 'undefined' && decodePassphrase(location.hash.substring(1));
+    
 
   const liveKitUrl = useServerUrl(region as string | undefined);
 
