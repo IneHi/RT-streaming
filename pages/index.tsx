@@ -1,4 +1,3 @@
-"use client"
 import { useRouter } from 'next/navigation';
 import React from 'react';
 import { generateRoomId } from '../lib/client-utils';
