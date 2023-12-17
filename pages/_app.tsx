@@ -3,15 +3,16 @@ import type { AppProps } from 'next/app';
 import '@livekit/components-styles';
 import '@livekit/components-styles/prefabs';
 import { DefaultSeo } from 'next-seo';
-
-function MyApp({ Component, pageProps }: AppProps) {
+import { SessionProvider } from "next-auth/react";
+function MyApp({ Component, pageProps:{session, ...pageProps} }: AppProps) {
   return (
     <>
+    <SessionProvider session={session}>
       <DefaultSeo
-        title="NTUSTLIVE"
+        title="NTUSTLIVE.TECH"
         titleTemplate="%s"
-        defaultTitle="NTUSTLIVE"
-        description="NTUSTLIVE"
+        defaultTitle="NTUSTLIVE.TECH"
+        description="NTUSTLIVE.TECH"
         twitter={{
           handle: '@livekitted',
           site: '@livekitted',
@@ -27,7 +28,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               type: 'image/png',
             },
           ],
-          site_name: 'NTUSTLIVE',
+          site_name: 'NTUSTLIVE.TECH',
         }}
         additionalMetaTags={[
           {
@@ -53,6 +54,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         ]}
       />
       <Component {...pageProps} />
+      </SessionProvider>
     </>
   );
 }

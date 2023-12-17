@@ -1,8 +1,9 @@
-
+"use client"
 import { useRouter } from 'next/navigation';
 import React from 'react';
 import { generateRoomId } from '../lib/client-utils';
-
+import LoginBtn from '../components/login-btn';
+import StartStreaming from '../components/start-streaming-btn';
 export default function Home() {
   const router = useRouter();
   const startMeeting = () => {
@@ -38,10 +39,11 @@ export default function Home() {
               className="flex items-center text-indigo-400 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
               href="#"
             >
-              NTUST
+              
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-pink-500 to-purple-500">
-                LIVE
+              NTUSTLIVE
               </span>
+              .TECH
             </a>
             <div className="flex w-1/2 justify-end content-center">
               <a
@@ -88,20 +90,10 @@ export default function Home() {
             </p>
             <div className="bg-gray-900 opacity-75 w-full shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4">
               <div className="flex items-center justify-between pt-4">
-
-                <button className="lk-button bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out" 
-                onClick={() => startMeeting()}>
-                  Start Live Streaming!
-                </button>
-
-                <button
-                  className="bg-gradient-to-r from-purple-800 to-green-500 hover:from-pink-500 hover:to-green-500 text-white font-bold py-2 px-4 rounded focus:ring transform transition hover:scale-105 duration-300 ease-in-out"
-                  type="button"
-                >
-                  Sign In with Github
-                </button>
+                <LoginBtn/>
               </div>
             </div>
+            <StartStreaming/>
           </div>
           {/*Right Col*/}
           <div className="w-full xl:w-3/5 p-12 overflow-hidden">
@@ -113,7 +105,7 @@ export default function Home() {
           {/*Footer*/}
           <div className="w-full pt-16 pb-6 text-sm text-center md:text-left fade-in">
             <a className="text-gray-500 no-underline hover:no-underline" href="#">
-              © NTUSTLIVE 2023 -
+              © NTUSTLIVE.TECH 2023 -
             </a>
             {' '}ALL RIGHTS RESERVED
           </div>
